@@ -16,12 +16,12 @@ class RobieLegs:
     def roll(self, x, y):
 
         if y >= 0:
-            self.leftLeg.run(Adafruit_MotorHAT.FORWORD)
-            self.rightLeg.run(Adafruit_MotorHAT.FORWORD)
+            self.leftLeg.run(Adafruit_MotorHAT.FORWARD)
+            self.rightLeg.run(Adafruit_MotorHAT.FORWARD)
         elif y < 0:
             y = y * -1
-            self.leftLeg.run(Adafruit_MotorHAT.BACKWORD)
-            self.rightLeg.run(Adafruit_MotorHAT.BACKWORD)
+            self.leftLeg.run(Adafruit_MotorHAT.BACKWARD)
+            self.rightLeg.run(Adafruit_MotorHAT.BACKWARD)
 
         if x < 0:
             x = x * -1
@@ -41,6 +41,6 @@ class RobieLegs:
         self.rightLeg.setSpeed(rightSpeed)
         self.leftLeg.setSpeed(leftSpeed)
 
-atexit.register(RobieLegs.turnOffMotors)
+atexit.register(RobieLegs().turnOffMotors)
 
 RobieLegs().roll(0, 100)
