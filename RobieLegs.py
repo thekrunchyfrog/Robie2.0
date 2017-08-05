@@ -1,4 +1,4 @@
-from Adafruit_MotorHAT import Adafruit_MotorHAT
+from Adafruit_MotorHAT import Adafruit_MotorHAT, Adafruit_DCMotor
 
 
 import atexit
@@ -10,10 +10,8 @@ class RobieLegs:
     rightLeg = mh.getMotor(2)
 
     def turnOffMotors(self):
-        self.mh.getMotor(1).run(Adafruit_MotorHAT.RELEASE)
-        self.mh.getMotor(2).run(Adafruit_MotorHAT.RELEASE)
-        self.mh.getMotor(3).run(Adafruit_MotorHAT.RELEASE)
-        self.mh.getMotor(4).run(Adafruit_MotorHAT.RELEASE)
+        self.rightLeg.run(Adafruit_MotorHAT.RELEASE)
+        self.leftLeg.run(Adafruit_MotorHAT.RELEASE)
 
     def roll(self, x, y):
 
@@ -45,6 +43,4 @@ class RobieLegs:
 
 atexit.register(RobieLegs.turnOffMotors)
 
-legs = RobieLegs
-
-legs.roll(0, 100)
+RobieLegs().roll(0, 100)
