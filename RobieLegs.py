@@ -45,4 +45,6 @@ class RobieLegs:
 
 atexit.register(RobieLegs.turnOffMotors)
 
-legs = roll(0, 100)
+legs = RobieLegs
+
+legs.roll(0, 100)
