@@ -31,7 +31,7 @@ class RobieLegs:
             if rightSpeed < 0:
                 rightSpeed = rightSpeed * -1
 
-        elif x > 0:
+        elif x >= 0:
             rightSpeed = y
             leftSpeed = y - x
 
