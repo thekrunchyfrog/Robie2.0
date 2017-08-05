@@ -42,5 +42,6 @@ class RobieLegs:
         self.leftLeg.setSpeed(leftSpeed)
 
 atexit.register(RobieLegs().turnOffMotors)
+while True:
 
-RobieLegs().roll(0, 100)
+	RobieLegs().roll(0,200)
