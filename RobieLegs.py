@@ -31,7 +31,7 @@ class RobieLegs:
             if rightSpeed < 0:
                 rightSpeed = rightSpeed * -1
 
-        elif x > 0:
+        elif x >= 0:
             rightSpeed = y
             leftSpeed = y - x
 
@@ -42,5 +42,6 @@ class RobieLegs:
         self.leftLeg.setSpeed(leftSpeed)
 
 atexit.register(RobieLegs().turnOffMotors)
+while True:
 
-RobieLegs().roll(0, 100)
+	RobieLegs().roll(0,200)
