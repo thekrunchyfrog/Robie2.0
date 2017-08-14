@@ -1,13 +1,12 @@
 from Adafruit_MotorHAT import Adafruit_MotorHAT, Adafruit_DCMotor
 
-
 import atexit
 
 
 class RobieLegs:
     mh = Adafruit_MotorHAT(addr=0x60)
-    leftLeg = mh.getMotor(1)
-    rightLeg = mh.getMotor(2)
+    leftLeg = mh.getMotor(2)
+    rightLeg = mh.getMotor(1)
 
     def turnOffMotors(self):
         self.rightLeg.run(Adafruit_MotorHAT.RELEASE)
@@ -44,4 +43,4 @@ class RobieLegs:
 atexit.register(RobieLegs().turnOffMotors)
 while True:
 
-	RobieLegs().roll(0,200)
+    RobieLegs().roll(0, 200)
