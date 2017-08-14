@@ -54,8 +54,19 @@
 				baseY			: 200
 			});
 
+			pointX = 0
+			pointY = 0
+
 			setInterval(function(){
 					
+					if (pointX != joystick.deltaX()) {
+						console.log("FUCK")
+						console.log(pointX + "," + pointY)
+					}
+
+					pointX = joystick.deltaX()
+					pointY = joystick.deltaY()
+
 			}, 1000);
 		</script>
 	</body>
