@@ -12,7 +12,7 @@ def api_Legs():
     if request.headers['Content-Type'] == 'application/json':
         x = request.json['x']
         y = request.json['y']
-        resp = RobieLegs().roll(x, y)
+        RobieLegs().roll(x, y)
         resp.status_code = 200
         resp.headers['server'] = ""
         return resp
