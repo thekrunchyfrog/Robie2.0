@@ -62,6 +62,11 @@
 					if (pointX != joystick.deltaX()) {
 						console.log("FUCK")
 						console.log(pointX + "," + pointY)
+
+						var xhttp = new XMLHttpRequest();
+						xhttp.open("POST", "http://127.0.0.1:5000/robie/legs");
+						xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+						xmlhttp.send(JSON.stringify({ "x": joystick.deltaX(), "y": joystick.deltaY()}));
 					}
 
 					pointX = joystick.deltaX()
