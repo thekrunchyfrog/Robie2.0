@@ -13,6 +13,7 @@ def api_Legs():
         x = request.json['x']
         y = request.json['y']
         RobieLegs().roll(x, y)
+        resp = Response()
         resp.status_code = 200
         resp.headers['server'] = ""
         return resp
