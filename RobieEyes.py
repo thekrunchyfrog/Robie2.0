@@ -5,6 +5,9 @@ class RobieEyes:
     pwmHat = Adafruit_PCA9685.PCA9685()
     pwmHat.set_pwm_freq(1000)
 
+    RIGHT_EYE = 0
+    LEFT_EYE = 3
+
     def setColor(self, channel, red, green, blue):
         red = self.translate(red)
         green = self.translate(green)
@@ -27,6 +30,3 @@ class RobieEyes:
         self.pwmHat.set_pwm(3, 4096, 0)
         self.pwmHat.set_pwm(4, 4096, 0)
         self.pwmHat.set_pwm(5, 4096, 0)
-
-
-eye = RobieEyes().setColor(0, 255, 0, 0)
