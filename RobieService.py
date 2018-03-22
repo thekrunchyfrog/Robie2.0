@@ -1,7 +1,7 @@
 from flask import Flask
 from flask import request
 from flask import Response
-from flask.ext.cors import CORS, cross_origin
+from flask_cors import CORS, cross_origin
 from RobieLegs import *
 from RobieEyes import *
 
